@@ -1,1 +1,1 @@
-# kuwuxnpm
+# npm install kuwuxlib
