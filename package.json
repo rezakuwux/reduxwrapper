@@ -1,7 +1,7 @@
 {
   "name": "kuwuxlib",
-  "version": "1.0.3",
-  "description": "Test Kuwux Lib",
+  "version": "1.0.4",
+  "description": "NPM ReduxWrapper Reza Kuwux",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rezakuwux/kuwuxnpm.git"
+    "url": "git+https://github.com/rezakuwux/reduxwrapper.git"
   },
   "keywords": [
     "react-native",

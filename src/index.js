@@ -11,27 +11,15 @@ const ReduxWrapper = (state = initState, action) => {
         todoList: state.todoList.concat({
           id: action.payLoad.id,
           text: action.payLoad.text,
-          completed: action.payLoad.completed
+          completed: false
         })
       }
-    case 'DONE_TODO':
-      const done = state.todoList.map(e => {
-        if (e.id === action.payLoad.id) {
-          e = { ...e, completed: action.payLoad.completed };
-        }
-        return e;
-      });
-
-      return {
-        ...state,
-        todoList: done
-      }
     case 'UPDATE_TODO':
-      const update = state.todoList.map(e => {
-        if (e.id === action.payLoad.id) {
-          e = { ...e, text: action.payLoad.text };
+      const update = state.todoList.map(todo => {
+        if (todo.id === action.payLoad.id) {
+          todo = { ...todo, text: action.payLoad.text };
         }
-        return e;
+        return todo;
       });
 
       return {
@@ -39,12 +27,11 @@ const ReduxWrapper = (state = initState, action) => {
         todoList: update
       }
     case 'DELETE_TODO':
-      var remove = state.todoList.filter(e => e.id !== action.payLoad.id);
       return {
         ...state,
-        todoList: remove
+        todoList: state.todoList.filter(todo => todo.id !== action.payLoad.id)
       }
-    case 'CLEAR_DATA':
+    case 'CLEAR_TODO':
       return {
         ...state,
         todoList: []
