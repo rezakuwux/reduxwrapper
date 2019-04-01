@@ -1,18 +1,57 @@
-import React from "react";
+const initState = {
+  todoList: [
+  ],
+}
 
-const KuwuxColorSquare = props => {
-  const { width, height, color, text } = props;
-  return (
-    <div
-      style={{
-        width: width || 100,
-        height: height || 100,
-        backgroundColor: color || "blue"
-      }}
-    >
-      {text}
-    </div>
-  );
-};
+const ReduxWrapper = (state = initState, action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return {
+        ...state,
+        todoList: state.todoList.concat({
+          id: action.payLoad.id,
+          text: action.payLoad.text,
+          completed: action.payLoad.completed
+        })
+      }
+    case 'DONE_TODO':
+      const done = state.todoList.map(e => {
+        if (e.id === action.payLoad.id) {
+          e = { ...e, completed: action.payLoad.completed };
+        }
+        return e;
+      });
 
-export default KuwuxColorSquare;
+      return {
+        ...state,
+        todoList: done
+      }
+    case 'UPDATE_TODO':
+      const update = state.todoList.map(e => {
+        if (e.id === action.payLoad.id) {
+          e = { ...e, text: action.payLoad.text };
+        }
+        return e;
+      });
+
+      return {
+        ...state,
+        todoList: update
+      }
+    case 'DELETE_TODO':
+      var remove = state.todoList.filter(e => e.id !== action.payLoad.id);
+      return {
+        ...state,
+        todoList: remove
+      }
+    case 'CLEAR_DATA':
+      return {
+        ...state,
+        todoList: []
+      }
+    default:
+      return state;
+  }
+}
+
+export default ReduxWrapper

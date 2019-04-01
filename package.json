@@ -1,6 +1,6 @@
 {
   "name": "kuwuxlib",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Test Kuwux Lib",
   "main": "build/index.js",
   "scripts": {
