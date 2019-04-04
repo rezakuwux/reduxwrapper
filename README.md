@@ -8,6 +8,6 @@ npm install kuwuxlib --save
   - 'ADD_TODO' -> Menambahkan Todo
   - 'DELETE_TODO' -> Menghapus Todo
   - 'UPDATE_TODO' -> Merubah Todo
-  - 'CLEAR_TODO' -> Menghapus semua Todo
+  - 'CLEAR_DATA' -> Menghapus semua Todo
 
 
