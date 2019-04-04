@@ -1,8 +1,9 @@
 # reduxwrapper
-# Install
-npm install kuwuxlib
-
-# Action Type
+## Install
+```bash
+npm install kuwuxlib --save
+```
+## Action Type
 
   - 'ADD_TODO' -> Menambahkan Todo
   - 'DELETE_TODO' -> Menghapus Todo
