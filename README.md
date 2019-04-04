@@ -10,7 +10,7 @@ npm install redux --save
 npm install react-redux --save
 ```
 
-## Action Type
+## Action
 
   - 'ADD_TODO' -> Menambahkan Todo
   - 'DELETE_TODO' -> Menghapus Todo
