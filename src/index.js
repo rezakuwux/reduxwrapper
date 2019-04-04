@@ -1,3 +1,11 @@
+export const ActionType = {
+  ADD_TODO:'ADD_TODO',
+  UPDATE_TODO:'UPDATE_TODO',
+  DELETE_TODO:'DELETE_TODO',
+  CLEAR_TODO:'CLEAR_TODO',
+
+}
+
 const initState = {
   todoList: [
   ],
@@ -5,7 +13,7 @@ const initState = {
 
 const ReduxWrapper = (state = initState, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case ADD_TODO:
       return {
         ...state,
         todoList: state.todoList.concat({
@@ -14,7 +22,7 @@ const ReduxWrapper = (state = initState, action) => {
           completed: false
         })
       }
-    case 'UPDATE_TODO':
+    case UPDATE_TODO:
       const update = state.todoList.map(todo => {
         if (todo.id === action.payLoad.id) {
           todo = { ...todo, text: action.payLoad.text };
@@ -26,12 +34,12 @@ const ReduxWrapper = (state = initState, action) => {
         ...state,
         todoList: update
       }
-    case 'DELETE_TODO':
+    case DELETE_TODO:
       return {
         ...state,
         todoList: state.todoList.filter(todo => todo.id !== action.payLoad.id)
       }
-    case 'CLEAR_TODO':
+    case CLEAR_TODO:
       return {
         ...state,
         todoList: []
