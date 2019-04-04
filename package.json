@@ -5,7 +5,9 @@
   "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -31,10 +33,12 @@
     "@babel/preset-env": "^7.4.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^24.6.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.0",
+    "jest": "^24.6.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
